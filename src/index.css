@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Portfolio Design System - Dark Blue & Black Minimal Theme */
+
+@layer base {
+  :root {
+    /* Base colors - Dark theme with blue accents */
+    --background: 215 28% 17%;
+    --foreground: 210 20% 98%;
+
+    --card: 215 28% 17%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 215 28% 17%;
+    --popover-foreground: 210 20% 98%;
+
+    /* Primary - Deep blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 0%;
+    --primary-dark: 215 28% 17%;
+    --primary-darker: 220 39% 11%;
+
+    /* Secondary - Elegant grays */
+    --secondary: 215 16% 25%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 16% 25%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 16% 25%;
+    --input: 215 16% 25%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Portfolio specific colors */
+    --hero-gradient-start: 220 39% 11%;
+    --hero-gradient-end: 215 28% 17%;
+    --section-bg: 220 39% 11%;
+    --section-bg-alt: 215 28% 17%;
+    
+    /* Glass effect */
+    --glass-bg: 215 28% 17% / 0.8;
+    --glass-border: 217 91% 60% / 0.2;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(220 39% 11% / 0.2);
+    --shadow-md: 0 8px 25px hsl(220 39% 11% / 0.15);
+    --shadow-lg: 0 25px 50px hsl(220 39% 11% / 0.25);
+    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
+
+    /* Sidebar (keeping existing) */
+    --sidebar-background: 220 39% 11%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 215 16% 25%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 215 16% 25%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    /* Light mode adjustments if needed */
+    --background: 0 0% 100%;
+    --foreground: 220 39% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 39% 11%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--hero-gradient-end)));
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Glass morphism effect */
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+
+  /* Gradient backgrounds */
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--hero-gradient-end)));
+  }
+
+  .gradient-section {
+    background: linear-gradient(180deg, hsl(var(--section-bg)), hsl(var(--section-bg-alt)));
+  }
+
+  /* Shadow utilities */
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-portfolio {
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Scroll animations */
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-slideInLeft {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  .animate-slideInRight {
+    animation: slideInRight 0.8s ease-out;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
