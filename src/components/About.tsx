@@ -48,7 +48,7 @@ const About = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   Minhas experiências na Whirlpool Corporation e Sesi Senai como jovem aprendiz me 
                   proporcionou vivência prática no desenvolvimento de sistemas e o trabalho em uma dentro de uma empresa, 
-                  com manutenção e criação de soluções inovadoras.
+                  com manutenção e criação de soluções inovadora.
                 </p>
               </div>
 
